@@ -1,0 +1,61 @@
+{
+    "$schema": "https://www.raycast.com/schemas/extension.json",
+    "name": "raycast-windows-extension-template",
+    "title": "Windows Extension Template",
+    "description": "A comprehensive template for building Windows-compatible Raycast extensions",
+    "icon": "icon.png",
+    "author": "template-author",
+    "categories": [
+        "Developer Tools"
+    ],
+    "license": "MIT",
+    "platforms": [
+        "Windows"
+    ],
+    "commands": [
+        {
+            "name": "main-command",
+            "title": "Main Command",
+            "description": "The main command of your extension",
+            "mode": "view"
+        }
+    ],
+    "preferences": [
+        {
+            "name": "exampleSetting",
+            "title": "Example Setting",
+            "description": "An example preference setting",
+            "type": "textfield",
+            "default": "Default Value",
+            "required": false
+        },
+        {
+            "name": "enableFeature",
+            "title": "Enable Feature",
+            "description": "Enable or disable a feature",
+            "type": "checkbox",
+            "required": false,
+            "default": false,
+            "label": "Enable this feature"
+        }
+    ],
+    "dependencies": {
+        "@raycast/api": "^1.100.3",
+        "@raycast/utils": "^1.19.1"
+    },
+    "devDependencies": {
+        "@raycast/eslint-config": "^1.0.11",
+        "@types/node": "18.18.4",
+        "@types/react": "19.0.10",
+        "eslint": "^8.57.1",
+        "prettier": "^3.6.2",
+        "typescript": "^5.8.3"
+    },
+    "scripts": {
+        "build": "ray build -e dist",
+        "dev": "ray develop",
+        "fix-lint": "ray lint --fix",
+        "lint": "ray lint",
+        "publish": "ray publish"
+    }
+}
