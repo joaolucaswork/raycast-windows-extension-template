@@ -1,12 +1,12 @@
 {
     "$schema": "https://www.raycast.com/schemas/extension.json",
-    "name": "raycast-windows-extension-template",
-    "title": "Windows Extension Template",
-    "description": "A comprehensive template for building Windows-compatible Raycast extensions",
+    "name": "raycast-pomodoro",
+    "title": "Pomodoro Timer",
+    "description": "A comprehensive Pomodoro timer extension for Windows with productivity tracking and customizable intervals",
     "icon": "icon.png",
-    "author": "template-author",
+    "author": "joaolucaswork",
     "categories": [
-        "Developer Tools"
+        "Productivity"
     ],
     "license": "MIT",
     "platforms": [
@@ -14,34 +14,90 @@
     ],
     "commands": [
         {
-            "name": "main-command",
-            "title": "Main Command",
-            "description": "The main command of your extension",
+            "name": "pomodoro-timer",
+            "title": "Pomodoro Timer",
+            "description": "Start, stop, and manage your Pomodoro sessions",
             "mode": "view"
+        },
+        {
+            "name": "timer-history",
+            "title": "Timer History",
+            "description": "View your Pomodoro session history and statistics",
+            "mode": "view"
+        },
+        {
+            "name": "quick-start",
+            "title": "Quick Start Timer",
+            "description": "Quickly start a Pomodoro session",
+            "mode": "no-view"
         }
     ],
     "preferences": [
         {
-            "name": "exampleSetting",
-            "title": "Example Setting",
-            "description": "An example preference setting",
+            "name": "workDuration",
+            "title": "Work Duration (minutes)",
+            "description": "Duration of work intervals in minutes",
             "type": "textfield",
-            "default": "Default Value",
+            "default": "25",
             "required": false
         },
         {
-            "name": "enableFeature",
-            "title": "Enable Feature",
-            "description": "Enable or disable a feature",
+            "name": "shortBreakDuration",
+            "title": "Short Break Duration (minutes)",
+            "description": "Duration of short breaks in minutes",
+            "type": "textfield",
+            "default": "5",
+            "required": false
+        },
+        {
+            "name": "longBreakDuration",
+            "title": "Long Break Duration (minutes)",
+            "description": "Duration of long breaks in minutes",
+            "type": "textfield",
+            "default": "15",
+            "required": false
+        },
+        {
+            "name": "longBreakInterval",
+            "title": "Long Break Interval",
+            "description": "Number of work sessions before a long break",
+            "type": "textfield",
+            "default": "4",
+            "required": false
+        },
+        {
+            "name": "enableNotifications",
+            "title": "Enable Audio Notifications",
+            "description": "Play sound when timer completes",
+            "type": "checkbox",
+            "required": false,
+            "default": true,
+            "label": "Enable audio notifications"
+        },
+        {
+            "name": "autoStartBreaks",
+            "title": "Auto-start Breaks",
+            "description": "Automatically start break timers after work sessions",
             "type": "checkbox",
             "required": false,
             "default": false,
-            "label": "Enable this feature"
+            "label": "Auto-start breaks"
+        },
+        {
+            "name": "autoStartWork",
+            "title": "Auto-start Work",
+            "description": "Automatically start work timers after breaks",
+            "type": "checkbox",
+            "required": false,
+            "default": false,
+            "label": "Auto-start work sessions"
         }
     ],
     "dependencies": {
         "@raycast/api": "^1.100.3",
-        "@raycast/utils": "^1.19.1"
+        "@raycast/utils": "^1.19.1",
+        "date-fns": "^3.6.0",
+        "zustand": "^4.5.0"
     },
     "devDependencies": {
         "@raycast/eslint-config": "^1.0.11",
